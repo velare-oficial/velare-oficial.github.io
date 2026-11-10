@@ -95,6 +95,34 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 .completa button{background:#d4af37 !important;color:#1a1a1a !important;font-weight:500 !important}
 
 .footer{text-align:center;padding:20px 16px;font-size:.68rem;color:var(--muted);letter-spacing:.06em}
+
+/* ── Pantallas grandes ──
+   El catálogo está pensado para celular (una columna de 480px). En tablet
+   se abre a 2 columnas y en computadora a 4, para que no quede una tira
+   angosta en medio de la pantalla. */
+@media(min-width:760px){
+  .cats{max-width:920px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:start}
+  .cat-card{margin-bottom:0}
+}
+@media(min-width:1180px){
+  .cats{max-width:1340px;grid-template-columns:repeat(4,1fr);gap:26px;padding:36px 24px 56px}
+  .hero-img{height:230px}
+  .hero-section h1{font-size:3.4rem}
+  .card-body h2{font-size:1.15rem}
+  /* La ultima tarjeta ("ver todo el catalogo") cruza las 4 columnas:
+     es un cierre, no una coleccion mas, y asi no queda sola en su renglon. */
+  .cats>.cat-card:last-child{grid-column:1/-1}
+  .cats>.cat-card:last-child .hero-img{height:180px}
+  .cats>.cat-card:last-child .previews{justify-content:center}
+  .cats>.cat-card:last-child .card-body{text-align:center}
+  .cats>.cat-card:last-child .card-body button{max-width:420px;margin:0 auto}
+}
+/* Mismo alto para todas las tarjetas del renglon, con el boton siempre abajo */
+@media(min-width:760px){
+  .cat-card{display:flex;flex-direction:column}
+  .cat-card .card-body{display:flex;flex-direction:column;flex:1}
+  .cat-card .card-body button{margin-top:auto}
+}
 </style>
 </head>
 <body>
