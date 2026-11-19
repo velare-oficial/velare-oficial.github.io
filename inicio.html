@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#2f5d34">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italiana&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italiana&family=Figtree:wght@400;500;600&family=Caveat:wght@700&display=swap">
 <style>
 :root{
   --bg:#f4f7f1; --card:#ffffff; --ink:#1f3322; --muted:#5f7560; --line:#dbe5d5;
@@ -67,7 +67,13 @@ img{max-width:100%;display:block}
 .gal{min-width:0}
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:22px;scrollbar-width:none;background:var(--card)}
 .slides::-webkit-scrollbar{display:none}
-.slides img{flex:0 0 100%;width:100%;scroll-snap-align:center;object-fit:contain;aspect-ratio:2/3;background:var(--card)}
+.slides .slide{flex:0 0 100%;position:relative;scroll-snap-align:center;container-type:inline-size}
+.slides .slide img{display:block;width:100%;object-fit:contain;aspect-ratio:2/3;background:var(--card)}
+/* Etiqueta de precio sobre la ficha (el precio ya no va impreso en la foto) */
+.ptag{position:absolute;left:62.78%;top:82.22%;width:32.67%;height:9.63%;display:flex;align-items:center;justify-content:center;gap:7%;
+  background:#2f5e34;color:#fff;border-radius:16px 7px 14px 8px/38px 30px 34px 28px;font-family:"Caveat","Segoe Script",cursive;font-weight:700;pointer-events:none}
+.ptag i{font:normal 400 5.2cqw/1 var(--body);opacity:.9}
+.ptag b{font-size:9.6cqw;line-height:1;border-bottom:.35cqw solid #fff;padding:0 .8cqw .2cqw}
 .dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
 .dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}
 .dots button[aria-current="true"]{background:var(--green);width:24px;border-radius:9px}
@@ -148,7 +154,7 @@ if(CATS[cat]) $("lema").textContent = CATS[cat];
 $("count").textContent = lista.length + (lista.length === 1 ? " modelo disponible" : " modelos disponibles");
 const waLink = v => "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent("Hola, quiero comprar la vela " + v.nombre + " (" + money(v.precio) + "). " + location.origin + location.pathname + "#" + v.id);
 
-$("grid").innerHTML = lista.map(v => `
+const pintarLista = () => { $("grid").innerHTML = lista.map(v => `
   <div class="card"><a class="card-link" href="#${v.id}">
     <div class="ph"><img src="${v.portada}" alt="${v.nombre}" loading="lazy"></div>
     <div class="tx">
@@ -158,7 +164,7 @@ $("grid").innerHTML = lista.map(v => `
         <span class="more">Ver detalles <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></span></div>
     </div></a>
     ${C.whatsapp ? `<div class="acts"><a class="btn" href="${waLink(v)}" target="_blank" rel="noopener">Comprar</a></div>` : ""}
-  </div>`).join("");
+  </div>`).join(""); };
 
 let listScroll = 0, fromList = false;
 function show(){
@@ -171,7 +177,7 @@ function show(){
   $("dDesc").textContent = v.descripcion; $("dPrecio").textContent = money(v.precio);
   $("dDet").innerHTML = (v.detalles||[]).map(([k,val]) => `<dt>${k}</dt><dd>${val}</dd>`).join("");
   $("dIdeal").hidden = !v.ideal; $("dIdeal").innerHTML = v.ideal ? `<b>Ideal para:</b> ${v.ideal}` : "";
-  $("slides").innerHTML = v.fotos.map(f => `<img src="${f.src}" alt="${f.alt}">`).join("");
+  $("slides").innerHTML = v.fotos.map(f => `<div class="slide"><img src="${f.src}" alt="${f.alt}">${/-ficha\.jpg$/.test(f.src) ? `<span class="ptag"><i>≡</i><b>${money(v.precio)}</b></span>` : ""}</div>`).join("");
   $("slides").scrollLeft = 0;
   $("dots").innerHTML = v.fotos.length > 1 ? v.fotos.map((_,i) => `<button type="button" aria-label="Foto ${i+1}" aria-current="${i===0}"></button>`).join("") : "";
   [...$("dots").children].forEach((b,i) => b.onclick = () => $("slides").scrollTo({left:i*$("slides").clientWidth,behavior:"smooth"}));
@@ -190,7 +196,47 @@ $("share").onclick = async () => {
   try{ if(navigator.share){ await navigator.share({title,url}); return; } }catch(e){ return; }
   try{ await navigator.clipboard.writeText(url); toast("Link copiado"); }catch(e){ toast(url); }
 };
-window.addEventListener("hashchange", show); show();
+window.addEventListener("hashchange", show);
+
+// Precios: si hay una Hoja de Google publicada (C.hojaPrecios), sus precios mandan sobre los de velas.js.
+// Si no carga (sin internet, enlace vacío), se usan los de velas.js.
+function leerCSV(t){
+  const filas = []; let f = [], c = "", q = false;
+  for(let i = 0; i < t.length; i++){
+    const ch = t[i];
+    if(q){ if(ch === '"'){ if(t[i+1] === '"'){ c += '"'; i++; } else q = false; } else c += ch; }
+    else if(ch === '"') q = true;
+    else if(ch === ","){ f.push(c); c = ""; }
+    else if(ch === "\n" || ch === "\r"){ if(ch === "\r" && t[i+1] === "\n") i++; f.push(c); c = ""; filas.push(f); f = []; }
+    else c += ch;
+  }
+  if(c !== "" || f.length){ f.push(c); filas.push(f); }
+  return filas;
+}
+async function cargarPrecios(){
+  if(!C.hojaPrecios) return false;
+  try{
+    const r = await fetch(C.hojaPrecios + (C.hojaPrecios.includes("?") ? "&" : "?") + "t=" + Date.now(), {cache:"no-store"});
+    if(!r.ok) return false;
+    const filas = leerCSV(await r.text());
+    const enc = (filas[0] || []).map(h => h.trim().toLowerCase());
+    const iId = enc.indexOf("id"), iP = enc.indexOf("precio");
+    if(iId < 0 || iP < 0) return false;
+    let cambio = false;
+    filas.slice(1).forEach(f => {
+      const v = C.velas.find(x => x.id === (f[iId] || "").trim());
+      const p = Number(String(f[iP] || "").replace(/[^0-9.]/g, ""));
+      if(v && p > 0 && v.precio !== p){ v.precio = p; cambio = true; }
+    });
+    return cambio;
+  }catch(e){ return false; }
+}
+(async () => {
+  const espera = cargarPrecios();
+  await Promise.race([espera, new Promise(ok => setTimeout(ok, 1200))]);
+  pintarLista(); show();
+  espera.then(cambio => { if(cambio){ pintarLista(); show(); } });
+})();
 </script>
 <script data-goatcounter="https://velare.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

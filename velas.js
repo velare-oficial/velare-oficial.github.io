@@ -4,6 +4,9 @@ window.CATALOGO = {
   instagram: "velare.candle",
   lema: "Hecho a mano con amor",
   whatsapp: "523322682222", // ejemplo: "523411234567" (con 52 y lada, sin espacios)
+  // Enlace CSV de la Hoja de Google con los precios (Archivo > Compartir > Publicar en la web > CSV).
+  // Si está vacío o no carga, se usan los precios de abajo (campo "precio" de cada vela).
+  hojaPrecios: "",
   velas: [
     {
       id: "ramo-de-rosas",
