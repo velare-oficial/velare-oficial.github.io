@@ -115,7 +115,7 @@ window.CATALOGO = {
       categoria: "navidad", // navidad | aromaticas | floral | recuerdos
       nombre: "Pinos de Navidad",
       subtitulo: "Arbolitos en tres tamaños",
-      precio: 35,
+      precio: 45,
       corta: "Arbolitos de pino en cera, perfectos para decorar tu mesa navideña.",
       descripcion: "Arbolitos de Navidad hechos a mano en cera con textura de ramas de pino. Vienen en tres tonos —verde intenso, verde claro y blanco— y en diferentes tamaños, así que puedes armar tu propio bosquecito navideño. Cada uno tiene un acabado brillante que refleja la luz de las velas de alrededor.",
       detalles: [
@@ -137,7 +137,7 @@ window.CATALOGO = {
       categoria: "navidad", // navidad | aromaticas | floral | recuerdos
       nombre: "Pino con Cascabel",
       subtitulo: "Arbolito plano con estrella dorada",
-      precio: 30,
+      precio: 40,
       corta: "Arbolito de Navidad en cera blanca con cascabel dorado en la punta.",
       descripcion: "Un arbolito de Navidad en cera blanca con silueta plana y ramas en relieve. Lleva un cascabel dorado en la punta que funciona como estrella, y se sostiene de pie por su base recta. Es compacto, elegante y queda perfecto al lado de una rama de pino natural.",
       detalles: [
@@ -158,7 +158,7 @@ window.CATALOGO = {
       categoria: "navidad", // navidad | aromaticas | floral | recuerdos
       nombre: "Reno Navideño",
       subtitulo: "Con moño y cascabel",
-      precio: 37,
+      precio: 40,
       corta: "Reno de cera blanca con moño rojo de 'Navidad' y cascabel dorado.",
       descripcion: "Un reno de cera blanca con silueta recortada, astas grandes y un arco entre las patitas. Lleva un moño rojo con la palabra 'Navidad' y un cascabel dorado colgando del cuello. Es un detalle navideño que se ve bien solo o acompañado de los pinos de la colección.",
       detalles: [
@@ -263,7 +263,7 @@ window.CATALOGO = {
       categoria: "navidad", // navidad | aromaticas | floral | recuerdos
       nombre: "Caja Regalo Navideña",
       subtitulo: "3 velas en caja kraft con ventana",
-      precio: 100,
+      precio: 115,
       corta: "Caja de regalo con pino, copo de nieve y reno, lista para entregar.",
       descripcion: "Una caja kraft con ventana transparente que trae tres velas navideñas acomodadas sobre papel de seda blanco: un pino con hojuela de oro, un copo de nieve y un reno con moño rojo. Ya viene armada y decorada con una rama de pino, así que solo la entregas. Es el regalo perfecto para alguien que no sabe qué dar en Navidad.",
       detalles: [
@@ -284,7 +284,7 @@ window.CATALOGO = {
       categoria: "navidad", // navidad | aromaticas | floral | recuerdos
       nombre: "Bosque Navideño",
       subtitulo: "Set completo con charola y piedritas",
-      precio: 210,
+      precio: 250,
       corta: "Tres pinos, un reno y un pino blanco sobre charola de concreto con piedritas. Personaliza los colores.",
       descripcion: "Un bosque navideño completo sobre una charola ovalada de concreto blanco con cama de piedritas decorativas: tres pinos en distintos tonos de verde, un reno con moño rojo y cascabel, y un pino blanco con cascabel dorado. La charola y las piedritas están incluidas. Los pinos y renos se pueden hacer en el color que prefieras — solo dinos cuál al hacer tu pedido.",
       detalles: [
