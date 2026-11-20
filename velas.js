@@ -175,6 +175,29 @@ window.CATALOGO = {
       ]
     },
     {
+      id: "borreguito",
+      categoria: "navidad", // navidad | aromaticas | floral | recuerdos
+      nombre: "Borreguito",
+      subtitulo: "Con moño rojo y lana de rosas",
+      precio: 50,
+      corta: "Borreguito de cera con lana de rosas en relieve y moño rojo. Regalo ideal de Año Nuevo.",
+      descripcion: "Un borreguito tierno hecho en cera, con la lana formada por pequeñas rosas en relieve, ojitos negros y un moño rojo al cuello. Lo tenemos en rosa y en blanco, así que puedes regalar uno o armar la parejita. Es un detalle dulce para estrenar el año y se ve precioso como decoración, incluso sin encenderlo.",
+      detalles: [
+        ["Colores", "Rosa o blanco (tú eliges)"],
+        ["Detalle", "Moño rojo y ojitos negros"],
+        ["Acabado", "Lana de rosas en relieve, hecho a mano"],
+        ["Venta", "Precio por pieza"],
+        ["Temporada", "Regalo de Año Nuevo"]
+      ],
+      ideal: "Regalo de Año Nuevo, intercambio, detalle para baby shower o decoración de buró.",
+      portada: "img/borreguito-portada.svg",
+      fotos: [
+        { src: "img/borreguito-ficha.jpg", alt: "Ficha de la vela Borreguito" },
+        { src: "img/borreguito-portada.svg", alt: "Dos velas de borreguito, una rosa y una blanca, con moño rojo" },
+        { src: "img/borreguito-detalle.svg", alt: "Detalle de la lana de rosas en relieve y el moño rojo" }
+      ]
+    },
+    {
       id: "tabletas-aromaticas",
       categoria: "aromaticas", // navidad | aromaticas | floral | recuerdos
       nombre: "Tabletas Aromáticas",
