@@ -178,18 +178,28 @@ window.CATALOGO = {
       id: "borreguito",
       categoria: "navidad", // navidad | aromaticas | floral | recuerdos
       nombre: "Borreguito de la Abundancia",
+      etiqueta: "Edición Año Nuevo",
       subtitulo: "Edición Año Nuevo",
       precio: 50,
-      corta: "Borreguito de cera, símbolo de abundancia y buena fortuna. Edición Año Nuevo.",
-      descripcion: "¡Atrae la abundancia y comienza el año con los mejores deseos! Nuestros tiernos borreguitos de cera están elaborados artesanalmente con delicados detalles de lana de rosas y un hermoso moño rojo. El borreguito es un símbolo de abundancia, prosperidad, buena fortuna y nuevos comienzos: un detalle especial para regalar a tus seres queridos y compartirles tus mejores deseos para este Año Nuevo. Hechos a mano con amor, cuidando cada detalle.",
+      corta: "¡Atrae la abundancia y comienza el año con los mejores deseos! El borreguito es un símbolo de abundancia, prosperidad, buena fortuna y nuevos comienzos.",
+      listaTitulo: "🎁 Ideales para:",
+      lista: [
+        "Regalos de Año Nuevo",
+        "Detalles para familiares y amigos",
+        "Regalos para compañeros de trabajo",
+        "Recuerditos especiales para recibir el año",
+        "Decorar tu hogar con un toque de ternura y buenos deseos"
+      ],
+      descripcion: "¡Atrae la abundancia y comienza el año con los mejores deseos!\n\nNuestros tiernos borreguitos de cera están elaborados artesanalmente con delicados detalles de lana de rosas y un hermoso moño rojo. Cada pieza se hace a mano con amor, cuidando cada detalle, y se ve preciosa sola o en pareja.\n\nEl borreguito es un símbolo de abundancia, prosperidad, buena fortuna y nuevos comienzos. Es un detalle especial para regalar a tus seres queridos y compartirles tus mejores deseos para este Año Nuevo.\n\n¡Regala abundancia, comparte buenos deseos y comienza el año con mucha prosperidad!",
       detalles: [
         ["Colores", "Disponibles en diferentes colores"],
         ["Detalle", "Lana de rosas y moño rojo"],
+        ["Significado", "Abundancia, prosperidad y buena fortuna"],
         ["Acabado", "Hecho a mano con amor"],
         ["Venta", "$50 MXN por pieza"],
         ["Temporada", "Edición Año Nuevo"]
       ],
-      ideal: "Regalos de Año Nuevo, detalles para familiares, amigos y compañeros de trabajo, recuerditos para recibir el año o decorar tu hogar con un toque de ternura.",
+      ideal: "Regalos de Año Nuevo, detalles para familiares, amigos y compañeros de trabajo, recuerditos para recibir el año o decorar tu hogar.",
       portada: "img/borreguito-portada.svg",
       fotos: [
         { src: "img/borreguito-ficha.jpg", alt: "Ficha de la vela Borreguito" },

@@ -80,7 +80,11 @@ img{max-width:100%;display:block}
 .info{display:flex;flex-direction:column;gap:16px;min-width:0}
 .info h2{font-family:var(--script);font-weight:400;font-size:clamp(50px,12vw,64px);line-height:1;margin:0;color:var(--green)}
 .sub{font-family:var(--display);letter-spacing:.16em;text-transform:uppercase;font-size:15px;color:var(--muted);margin-top:-6px}
-.info .desc{margin:0;max-width:60ch}
+.info .desc{margin:0;max-width:60ch;white-space:pre-line}
+.card .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:600}
+.card ul,.ideal ul{margin:6px 0 0;padding-left:18px}
+.card ul{color:var(--muted);font-size:15px}
+.card .lt{margin:8px 0 0;color:var(--green-d);font-weight:600;font-size:15px}
 dl{margin:0;display:grid;grid-template-columns:auto 1fr;border-top:1px solid var(--line)}
 dt,dd{margin:0;padding:11px 0;border-bottom:1px solid var(--line)}
 dt{color:var(--muted);font-size:14px;padding-right:18px}
@@ -140,7 +144,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:calc(2
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="velas.js?v=20261119b"></script>
+<script src="velas.js?v=20261119c"></script>
 <script>
 const C = window.CATALOGO, $ = id => document.getElementById(id);
 const money = n => "$" + Number(n).toLocaleString("es-MX");
@@ -158,8 +162,10 @@ const pintarLista = () => { $("grid").innerHTML = lista.map(v => `
   <div class="card"><a class="card-link" href="#${v.id}">
     <div class="ph"><img src="${v.portada}" alt="${v.nombre}" loading="lazy"></div>
     <div class="tx">
+      ${v.etiqueta ? `<span class="tag">✨ ${v.etiqueta}</span>` : ""}
       <h2>${v.nombre}</h2>
       <p>${v.corta}</p>
+      ${v.lista ? `<p class="lt">${v.listaTitulo || ""}</p><ul>${v.lista.map(x => `<li>${x}</li>`).join("")}</ul>` : ""}
       <div class="row"><span class="price">${money(v.precio)}</span>
         <span class="more">Ver detalles <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></span></div>
     </div></a>
@@ -176,7 +182,7 @@ function show(){
   $("dNombre").textContent = v.nombre; $("dSub").textContent = v.subtitulo || "";
   $("dDesc").textContent = v.descripcion; $("dPrecio").textContent = money(v.precio);
   $("dDet").innerHTML = (v.detalles||[]).map(([k,val]) => `<dt>${k}</dt><dd>${val}</dd>`).join("");
-  $("dIdeal").hidden = !v.ideal; $("dIdeal").innerHTML = v.ideal ? `<b>Ideal para:</b> ${v.ideal}` : "";
+  $("dIdeal").hidden = !(v.ideal || v.lista); $("dIdeal").innerHTML = v.lista ? `<b>${v.listaTitulo || "Ideal para:"}</b><ul>${v.lista.map(x => `<li>${x}</li>`).join("")}</ul>` : (v.ideal ? `<b>Ideal para:</b> ${v.ideal}` : "");
   $("slides").innerHTML = v.fotos.map(f => `<div class="slide"><img src="${f.src}" alt="${f.alt}">${/-ficha\.jpg$/.test(f.src) ? `<span class="ptag"><i>≡</i><b>${money(v.precio)}</b></span>` : ""}</div>`).join("");
   $("slides").scrollLeft = 0;
   $("dots").innerHTML = v.fotos.length > 1 ? v.fotos.map((_,i) => `<button type="button" aria-label="Foto ${i+1}" aria-current="${i===0}"></button>`).join("") : "";
