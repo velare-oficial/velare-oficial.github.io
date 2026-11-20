@@ -136,10 +136,10 @@ window.CATALOGO = {
         ["Temporada", "Edición Año Nuevo"]
       ],
       ideal: "Regalos de Año Nuevo, detalles para familiares, amigos y compañeros de trabajo, recuerditos para recibir el año o decorar tu hogar.",
-      portada: "img/borreguito-portada.svg",
+      portada: "img/borreguito-vertical.svg",
       fotos: [
-        { src: "img/borreguito-ficha.jpg", alt: "Ficha de la vela Borreguito" },
-        { src: "img/borreguito-portada.svg", alt: "Dos velas de borreguito, una rosa y una blanca, con moño rojo" },
+        { src: "img/borreguito-abundancia-ficha.jpg", alt: "Ficha de la vela Borreguito" },
+        { src: "img/borreguito-vertical.svg", alt: "Dos velas de borreguito, una rosa y una blanca, con moño rojo" },
         { src: "img/borreguito-detalle.svg", alt: "Detalle de la lana de rosas en relieve y el moño rojo" }
       ]
     },
