@@ -111,6 +111,60 @@ window.CATALOGO = {
       ]
     },
     {
+      id: "borreguito",
+      categoria: "navidad", // navidad | aromaticas | floral | recuerdos
+      nombre: "Borreguito de la Abundancia",
+      etiqueta: "Edición Año Nuevo",
+      subtitulo: "Edición Año Nuevo",
+      precio: 50,
+      corta: "¡Atrae la abundancia y comienza el año con los mejores deseos! El borreguito es un símbolo de abundancia, prosperidad, buena fortuna y nuevos comienzos.",
+      listaTitulo: "🎁 Ideales para:",
+      lista: [
+        "Regalos de Año Nuevo",
+        "Detalles para familiares y amigos",
+        "Regalos para compañeros de trabajo",
+        "Recuerditos especiales para recibir el año",
+        "Decorar tu hogar con un toque de ternura y buenos deseos"
+      ],
+      descripcion: "¡Atrae la abundancia y comienza el año con los mejores deseos!\n\nNuestros tiernos borreguitos de cera están elaborados artesanalmente con delicados detalles de lana de rosas y un hermoso moño rojo. Cada pieza se hace a mano con amor, cuidando cada detalle, y se ve preciosa sola o en pareja.\n\nEl borreguito es un símbolo de abundancia, prosperidad, buena fortuna y nuevos comienzos. Es un detalle especial para regalar a tus seres queridos y compartirles tus mejores deseos para este Año Nuevo.\n\n¡Regala abundancia, comparte buenos deseos y comienza el año con mucha prosperidad!",
+      detalles: [
+        ["Colores", "Disponibles en diferentes colores"],
+        ["Detalle", "Lana de rosas y moño rojo"],
+        ["Significado", "Abundancia, prosperidad y buena fortuna"],
+        ["Acabado", "Hecho a mano con amor"],
+        ["Venta", "$50 MXN por pieza"],
+        ["Temporada", "Edición Año Nuevo"]
+      ],
+      ideal: "Regalos de Año Nuevo, detalles para familiares, amigos y compañeros de trabajo, recuerditos para recibir el año o decorar tu hogar.",
+      portada: "img/borreguito-portada.svg",
+      fotos: [
+        { src: "img/borreguito-ficha.jpg", alt: "Ficha de la vela Borreguito" },
+        { src: "img/borreguito-portada.svg", alt: "Dos velas de borreguito, una rosa y una blanca, con moño rojo" },
+        { src: "img/borreguito-detalle.svg", alt: "Detalle de la lana de rosas en relieve y el moño rojo" }
+      ]
+    },
+    {
+      id: "bosque-navideno",
+      categoria: "navidad", // navidad | aromaticas | floral | recuerdos
+      nombre: "Bosque Navideño",
+      subtitulo: "Set completo con charola y piedritas",
+      precio: 250,
+      corta: "Tres pinos, un reno y un pino blanco sobre charola de concreto con piedritas. Personaliza los colores.",
+      descripcion: "Un bosque navideño completo sobre una charola ovalada de concreto blanco con cama de piedritas decorativas: tres pinos en distintos tonos de verde, un reno con moño rojo y cascabel, y un pino blanco con cascabel dorado. La charola y las piedritas están incluidas. Los pinos y renos se pueden hacer en el color que prefieras — solo dinos cuál al hacer tu pedido.",
+      detalles: [
+        ["Piezas", "3 pinos, 1 reno y 1 pino blanco (5 velas)"],
+        ["Base", "Charola ovalada de concreto con piedritas incluidas"],
+        ["Personalización", "Pinos y renos disponibles en el color que desees"],
+        ["Acabado", "Cascabeles dorados y moño rojo"]
+      ],
+      ideal: "Centro de mesa navideño, decoración de sala, regalo premium o pieza para chimenea.",
+      portada: "img/set-bosque-foto.svg",
+      fotos: [
+        { src: "img/bosque-navideno-ficha.jpg", alt: "Ficha de la vela Bosque Navideño" },
+        { src: "img/set-bosque-foto.svg", alt: "Bosque navideño con pinos, reno y charola de concreto" }
+      ]
+    },
+    {
       id: "pinos-de-navidad",
       categoria: "navidad", // navidad | aromaticas | floral | recuerdos
       nombre: "Pinos de Navidad",
@@ -172,39 +226,6 @@ window.CATALOGO = {
       fotos: [
         { src: "img/reno-navideno-ficha.jpg", alt: "Ficha de la vela Reno Navideño" },
         { src: "img/reno-navidad-foto.svg", alt: "Reno de cera blanca con moño rojo y cascabel dorado" }
-      ]
-    },
-    {
-      id: "borreguito",
-      categoria: "navidad", // navidad | aromaticas | floral | recuerdos
-      nombre: "Borreguito de la Abundancia",
-      etiqueta: "Edición Año Nuevo",
-      subtitulo: "Edición Año Nuevo",
-      precio: 50,
-      corta: "¡Atrae la abundancia y comienza el año con los mejores deseos! El borreguito es un símbolo de abundancia, prosperidad, buena fortuna y nuevos comienzos.",
-      listaTitulo: "🎁 Ideales para:",
-      lista: [
-        "Regalos de Año Nuevo",
-        "Detalles para familiares y amigos",
-        "Regalos para compañeros de trabajo",
-        "Recuerditos especiales para recibir el año",
-        "Decorar tu hogar con un toque de ternura y buenos deseos"
-      ],
-      descripcion: "¡Atrae la abundancia y comienza el año con los mejores deseos!\n\nNuestros tiernos borreguitos de cera están elaborados artesanalmente con delicados detalles de lana de rosas y un hermoso moño rojo. Cada pieza se hace a mano con amor, cuidando cada detalle, y se ve preciosa sola o en pareja.\n\nEl borreguito es un símbolo de abundancia, prosperidad, buena fortuna y nuevos comienzos. Es un detalle especial para regalar a tus seres queridos y compartirles tus mejores deseos para este Año Nuevo.\n\n¡Regala abundancia, comparte buenos deseos y comienza el año con mucha prosperidad!",
-      detalles: [
-        ["Colores", "Disponibles en diferentes colores"],
-        ["Detalle", "Lana de rosas y moño rojo"],
-        ["Significado", "Abundancia, prosperidad y buena fortuna"],
-        ["Acabado", "Hecho a mano con amor"],
-        ["Venta", "$50 MXN por pieza"],
-        ["Temporada", "Edición Año Nuevo"]
-      ],
-      ideal: "Regalos de Año Nuevo, detalles para familiares, amigos y compañeros de trabajo, recuerditos para recibir el año o decorar tu hogar.",
-      portada: "img/borreguito-portada.svg",
-      fotos: [
-        { src: "img/borreguito-ficha.jpg", alt: "Ficha de la vela Borreguito" },
-        { src: "img/borreguito-portada.svg", alt: "Dos velas de borreguito, una rosa y una blanca, con moño rojo" },
-        { src: "img/borreguito-detalle.svg", alt: "Detalle de la lana de rosas en relieve y el moño rojo" }
       ]
     },
     {
@@ -310,27 +331,6 @@ window.CATALOGO = {
       fotos: [
         { src: "img/caja-regalo-navidad-ficha.jpg", alt: "Ficha de la vela Caja Regalo Navideña" },
         { src: "img/caja-navidad-foto.svg", alt: "Caja kraft con tres velas navideñas y decoración de pino" }
-      ]
-    },
-    {
-      id: "bosque-navideno",
-      categoria: "navidad", // navidad | aromaticas | floral | recuerdos
-      nombre: "Bosque Navideño",
-      subtitulo: "Set completo con charola y piedritas",
-      precio: 250,
-      corta: "Tres pinos, un reno y un pino blanco sobre charola de concreto con piedritas. Personaliza los colores.",
-      descripcion: "Un bosque navideño completo sobre una charola ovalada de concreto blanco con cama de piedritas decorativas: tres pinos en distintos tonos de verde, un reno con moño rojo y cascabel, y un pino blanco con cascabel dorado. La charola y las piedritas están incluidas. Los pinos y renos se pueden hacer en el color que prefieras — solo dinos cuál al hacer tu pedido.",
-      detalles: [
-        ["Piezas", "3 pinos, 1 reno y 1 pino blanco (5 velas)"],
-        ["Base", "Charola ovalada de concreto con piedritas incluidas"],
-        ["Personalización", "Pinos y renos disponibles en el color que desees"],
-        ["Acabado", "Cascabeles dorados y moño rojo"]
-      ],
-      ideal: "Centro de mesa navideño, decoración de sala, regalo premium o pieza para chimenea.",
-      portada: "img/set-bosque-foto.svg",
-      fotos: [
-        { src: "img/bosque-navideno-ficha.jpg", alt: "Ficha de la vela Bosque Navideño" },
-        { src: "img/set-bosque-foto.svg", alt: "Bosque navideño con pinos, reno y charola de concreto" }
       ]
     },
     {
