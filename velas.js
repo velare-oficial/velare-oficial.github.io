@@ -177,19 +177,19 @@ window.CATALOGO = {
     {
       id: "borreguito",
       categoria: "navidad", // navidad | aromaticas | floral | recuerdos
-      nombre: "Borreguito",
-      subtitulo: "Con moño rojo y lana de rosas",
+      nombre: "Borreguito de la Abundancia",
+      subtitulo: "Edición Año Nuevo",
       precio: 50,
-      corta: "Borreguito de cera con lana de rosas en relieve y moño rojo. Regalo ideal de Año Nuevo.",
-      descripcion: "Un borreguito tierno hecho en cera, con la lana formada por pequeñas rosas en relieve, ojitos negros y un moño rojo al cuello. Lo tenemos en rosa y en blanco, así que puedes regalar uno o armar la parejita. Es un detalle dulce para estrenar el año y se ve precioso como decoración, incluso sin encenderlo.",
+      corta: "Borreguito de cera, símbolo de abundancia y buena fortuna. Edición Año Nuevo.",
+      descripcion: "¡Atrae la abundancia y comienza el año con los mejores deseos! Nuestros tiernos borreguitos de cera están elaborados artesanalmente con delicados detalles de lana de rosas y un hermoso moño rojo. El borreguito es un símbolo de abundancia, prosperidad, buena fortuna y nuevos comienzos: un detalle especial para regalar a tus seres queridos y compartirles tus mejores deseos para este Año Nuevo. Hechos a mano con amor, cuidando cada detalle.",
       detalles: [
-        ["Colores", "Rosa o blanco (tú eliges)"],
-        ["Detalle", "Moño rojo y ojitos negros"],
-        ["Acabado", "Lana de rosas en relieve, hecho a mano"],
-        ["Venta", "Precio por pieza"],
-        ["Temporada", "Regalo de Año Nuevo"]
+        ["Colores", "Disponibles en diferentes colores"],
+        ["Detalle", "Lana de rosas y moño rojo"],
+        ["Acabado", "Hecho a mano con amor"],
+        ["Venta", "$50 MXN por pieza"],
+        ["Temporada", "Edición Año Nuevo"]
       ],
-      ideal: "Regalo de Año Nuevo, intercambio, detalle para baby shower o decoración de buró.",
+      ideal: "Regalos de Año Nuevo, detalles para familiares, amigos y compañeros de trabajo, recuerditos para recibir el año o decorar tu hogar con un toque de ternura.",
       portada: "img/borreguito-portada.svg",
       fotos: [
         { src: "img/borreguito-ficha.jpg", alt: "Ficha de la vela Borreguito" },
